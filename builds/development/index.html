@@ -6,8 +6,38 @@
   <link rel="stylesheet" href="css/myStyle.css">
   <link rel="stylesheet" href="css/anotherstyle.css">
 </head>
-<body>
+<body ng-app="myApp">
+  <div ng-controller="ResumeController">
+    <p ng-bind="resumeData.name"></p>
+    <p ng-bind="resumeData.phoneNumber"></p>
+    <p ng-bind="resumeData.email"></p>
+    <p ng-bind="resumeData.objective"></p>
+    <p ng-bind="resumeData.address"></p>
+    <p ng-bind="resumeData.onlineResume"></p>
+
+    <div class="center" ng-repeat="exp in resumeData.experience">
+      <p ng-bind="exp.title"></p>
+      <p ng-bind="exp.period"></p>
+      <p ng-bind="exp.detail"></p>
+      <p ng-bind="exp.department"></p>
+    </div>
+
+    <div class="center" ng-repeat="edu in resumeData.education">
+      <p ng-bind="edu.university"></p>
+      <p ng-bind="edu.period"></p>
+      <p ng-bind="edu.major"></p>
+    </div>
+
+    <div class="center" ng-repeat="ski in resumeData.skill">
+      <p ng-bind="ski.field"></p>
+      <p ng-bind="ski.content"></p>
+    </div>
 
 
+  </div>
+
+
+  <script src="js/lib/angular/angular.min.js"></script>
+  <script src="js/lib/angular/app.js"></script>
 </body>
 </html>
